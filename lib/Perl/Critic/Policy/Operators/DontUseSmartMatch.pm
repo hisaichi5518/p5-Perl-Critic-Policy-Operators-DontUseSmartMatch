@@ -4,12 +4,13 @@ use strict;
 use warnings;
 use parent 'Perl::Critic::Policy';
 
+use Readonly;
 use Perl::Critic::Utils qw{ :severities };
 
 our $VERSION = "0.01";
 
-my $description = q{DON'T USE SMART MATCH!!!!!!!!!};
-my $explanation = q{remove start march.};
+Readonly::Scalar my $DESC => q{DON'T USE SMART MATCH!!!!!!!!!};
+Readonly::Scalar my $EXPL => q{remove start march.};
 
 sub supported_parameters { return () }
 sub default_severity     { return $SEVERITY_MEDIUM }
@@ -19,7 +20,7 @@ sub applies_to           { return 'PPI::Token::Operator' }
 sub violates {
     my ($self, $elem) = @_;
     return if $elem ne '~~';
-    return $self->violation($description, $explanation, $elem);
+    return $self->violation($DESC, $EXPL, $elem);
 }
 
 1;
