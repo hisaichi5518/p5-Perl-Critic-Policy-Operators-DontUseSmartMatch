@@ -30,15 +30,15 @@ __END__
 
 =head1 NAME
 
-Perl::Critic::Policy::Operators::DontUseSmartMatch - It's new $module
-
-=head1 SYNOPSIS
-
-    use Perl::Critic::Policy::Operators::DontUseSmartMatch;
+Perl::Critic::Policy::Operators::DontUseSmartMatch - Don't use smart match
 
 =head1 DESCRIPTION
 
-Perl::Critic::Policy::Operators::DontUseSmartMatch is ...
+Smart match, was experimental in 5.18. Better to do almost no good.
+
+    if ($hash ~~ $hash) { # not ok
+        ...;
+    }
 
 =head1 LICENSE
 
