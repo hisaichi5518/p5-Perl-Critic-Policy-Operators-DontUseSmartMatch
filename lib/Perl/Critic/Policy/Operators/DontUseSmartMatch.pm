@@ -34,7 +34,10 @@ Perl::Critic::Policy::Operators::DontUseSmartMatch - Don't use smart match
 
 =head1 DESCRIPTION
 
-Smart match, was experimental in 5.18. Better to do almost no good.
+smartmatch is now experimental.
+
+It is clear that smartmatch is almost certainly either going to change or go away in the future.
+Relying on its current behavior is not recommended.
 
     if ($hash ~~ $hash) { # not ok
         ...;
