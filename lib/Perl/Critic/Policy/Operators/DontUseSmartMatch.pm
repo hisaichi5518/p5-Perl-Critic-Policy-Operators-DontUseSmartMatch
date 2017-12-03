@@ -9,8 +9,8 @@ use Perl::Critic::Utils qw{ :severities };
 
 our $VERSION = "0.01";
 
-Readonly::Scalar my $DESC => q{DON'T USE SMART MATCH!!!!!!!!!};
-Readonly::Scalar my $EXPL => q{remove start march.};
+Readonly::Scalar my $DESC => q{Smart match operator "~~" used };
+Readonly::Scalar my $EXPL => q{Avoid using smart match operator "~~"};
 
 sub supported_parameters { return () }
 sub default_severity     { return $SEVERITY_MEDIUM }
